@@ -30,9 +30,18 @@ export class TasksService {
                 id
             }
         })
+        return task;
     }
+    
     async update(id: string, data: UpdateTaskDto){
-        await this.findOne(id)
+        return this.prisma.task.update({
+            where: { id },
+            data: {
+                title: data.title,
+                description: data.description,
+                status: data.status
+            }
+        })
     }
 
     async remove(id: string){
