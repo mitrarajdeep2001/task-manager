@@ -1,0 +1,79 @@
+Backend Practical Assignment — NestJS / Node.js / FastAPI
+Objective
+Build a simple Task Manager REST API from scratch — project setup, DB connection, and full CRUD. No boilerplate provided.
+Pick Your Stack
+Candidate chooses one:
+NestJS (TypeScript) + PostgreSQL
+Node.js + Express (TypeScript/JS) + PostgreSQL or MongoDB
+FastAPI (Python) + PostgreSQL or MongoDB
+What They Must Build
+1. Project Setup
+Init project from scratch (nest new / npm init / poetry init)
+Install and configure dependencies
+Connect to DB (env-based config, no hardcoded credentials)
+App should start without errors
+2. Schema / Model — Task
+Field
+Type
+Notes
+id
+UUID / Serial
+Primary key, auto-generated
+title
+String
+Required
+description
+String
+Optional
+status
+Enum
+pending, in_progress, done
+created_at
+Timestamp
+Auto
+3. CRUD Endpoints
+Method
+Route
+Action
+POST
+/tasks
+Create a task
+GET
+/tasks
+Get all tasks
+GET
+/tasks/:id
+Get one task
+PATCH
+/tasks/:id
+Update title / status
+DELETE
+/tasks/:id
+Delete a task
+4. Bonus (Optional)
+Filter tasks by status → GET /tasks?status=pending
+Basic input validation (class-validator / Pydantic)
+Return proper HTTP status codes (201, 404, 400)
+Evaluation Criteria
+Area
+What You're Checking
+Project setup
+Can they init + wire DB without hand-holding
+DB connection
+Env vars, connection error handling
+Code structure
+Separation of concerns (controller → service → repo/model)
+CRUD correctness
+All 5 endpoints work as expected
+Error handling
+404 on missing ID, validation on bad input
+Code cleanliness
+Naming, no dead code, readable logic
+Submission
+GitHub repo (public or shared)
+README.md with:
+Setup steps
+How to run locally
+.env.example with required variables
+Time limit: 2–3 hours
+This tells you fast if a candidate can actually build something end-to-end vs just edit existing code. The DB connection setup alone filters out a lot.
